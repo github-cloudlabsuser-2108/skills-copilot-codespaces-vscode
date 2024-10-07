@@ -1,0 +1,16 @@
+# Create a GitHub action to email a report from a file at 6 a.m. daily.
+
+name: Deploy App
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Email report
+        run: |
+          echo "Hello, here is the report for today." > report.txt
+          mail -s "Daily Report"

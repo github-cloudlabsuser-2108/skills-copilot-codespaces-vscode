@@ -21,12 +21,25 @@ class Program
             Console.Write("Enter your choice: ");
             if (int.TryParse(Console.ReadLine(), out choice))
             {
-                switch (choice)
+                if (choice == 1)
                 {
-                    case 1:
-                        Console.WriteLine("You go farther into the forest and discover a treasure chest!");
-                        score += 10;
-                        break;
+                    Console.WriteLine("You go farther into the forest and discover a treasure chest!");
+                    score += 10;
+                }
+                else if (choice == 2)
+                {
+                    Console.WriteLine("You rest by the campfire and regain 20 health.");
+                    health += 20;
+                }
+                else if (choice == 3)
+                {
+                    Console.WriteLine($"Thanks for playing! Your score: {score}");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Try again.");
+                }
                     case 2:
                         Console.WriteLine("You rest by the campfire and regain 20 health.");
                         health += 20;
